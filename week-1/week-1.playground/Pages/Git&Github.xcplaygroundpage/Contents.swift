@@ -65,23 +65,42 @@
  
  - (Advanced) git rebase
     合併的另一種用法與merge不同的地方是： 重新修改特定分支的「基礎版本」，把另外一個分支的變更，當成我這個分支的基礎
-    在 feature 分支執行 git rebase master
-             E---F---G feature
-            /
-        A---B---C---D master 
-    在 feature 分支執行 git rebase master 把在 feature 的 Commit 以 D 為基礎重新套用
-                     E'---F'---G' feature
-                    /
-        A---B---C---D master
- 
- 
+    ex: Merge - M 將兩個分支綁定在一起的合併提交
+         A---B---M  my-feature-branch
+        /       /
+        ...D---E---F---G    main
+     
+        rebase 會從原本：
+                 E---F---G feature
+                /
+            A---B---C---D master
+        rebase 合併後：
+                         E'---F'---G' feature
+                        /
+            A---B---C---D master
+        需要注意rebase會重寫你的提交歷史記錄
  
  - (Advanced) git cherry-pick
+    從分支中挑選 commit 並將其應用於另一個分支的行為，缺點是會導致重複提交
+     ex:
+         A---B---C---D   Master
+              \
+                D---F---G Feature
+         // 切换到 master 分支
+        git checkout master
+         // Cherry pick 操作
+        git cherry-pick f 後 :
+         A---B---C---D---F   Master
+              \
+                D---F---G Feature
  
  - (Advanced) git reflog
- 
+     git reflog 是比 git log 顯示版本紀錄更加完整的歷史紀錄，只要是透過指令修改了任何參照(ref)的內容，或是變更任何分支的 HEAD 參照內容，就會建立的歷史紀錄
+     
  - (Advanced) git tag
- 
+    在 Git 中，標記標記 repo 歷史記錄中的重要點，Git 支援兩種類型的標籤
+    - Lightweight tags 指向特定的 commit ，不包含其他資訊，也稱為軟標記，只要根據需要創建或刪除它們
+    - Annotated tags 包含 metadata ，可以簽名以進行驗證，並且無法更改
  
  Please describe how to establish a GitHub repo and how to upload the local projects to GitHub. Try to explain your answers with as much detail as possible.
  
