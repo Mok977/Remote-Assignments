@@ -66,8 +66,8 @@
  - (Advanced) git rebase
     合併的另一種用法與merge不同的地方是： 重新修改特定分支的「基礎版本」，把另外一個分支的變更，當成我這個分支的基礎
     ex: Merge - M 將兩個分支綁定在一起的合併提交
-         A---B---M  my-feature-branch
-        /       /
+             A---B---M  my-feature-branch
+            /       /
         ...D---E---F---G    main
      
         rebase 會從原本：

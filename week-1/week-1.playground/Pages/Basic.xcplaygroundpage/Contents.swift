@@ -18,7 +18,7 @@
 
 let x: Int = 10
 let y: Int = 4
-let average: Int = (x+y)/2
+let average: Int = (x + y) / 2
 print(average)
 
 /*

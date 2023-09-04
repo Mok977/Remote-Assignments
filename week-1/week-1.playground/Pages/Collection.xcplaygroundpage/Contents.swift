@@ -15,12 +15,15 @@ myFriends.append("Michael")
 // 4. Because I usually hang out with Kevin, please move Kevin to the beginning of the .myFriends array.
 
 myFriends.swapAt(0, 2)
+// 改用 insert 這個 method 可以怎麼做？
+myFriends.insert("Kevin", at: 0)
 
 // 5. Use for...in to print all the friends in myFriends array.
 
-for i in 0..<myFriends.count {
-    print(myFriends[i])
+for i in myFriends{
+    print(i)
 }
+
 
 /* 6. Now I want to know who is at index 5 in the myFriends array, try to find the answer for me. Please explain how you get the answer and why the answer is it.
 
