@@ -109,11 +109,14 @@ zoo.weeklyHot = horse
      Struct used - SwiftUI
      Class  used - UIKit
  
-     Struct - 是靜態調度(statically dispatched)，在 compile time 就決定好了，運行效率較高，確定沒有       subclass 要 override 的話，就可以用 static 來提升效率
+**** Struct - 是靜態調度(statically dispatched)，在 compile time 就決定好了，運行效率較高，確定沒有       subclass 要 override 的話，就可以用 static 來提升效率
+     ### Teacher feedback： struct 會有 subclass 嗎？ static 不會有 subclass 要 override 的問題， 只有 class 才會有繼承。所以應改為：如果要寫的功能沒有要用到 subclass 的 override 的話，使用 static 來做效率會比較高
+ 
      class - 動態調度(dynamically dispatched)，也就是在 runtime 才被指派，compiler 需要去找到底是       class 或是 subclass 的 method；換句話說就是用 class 可以被 override
  */
 
-/* 6. What’s the difference between reference type and value type ?
+/*
+ **** 6. What’s the difference between reference type and value type ?
  
     - reference type (share data) - class、function、closure (佔記憶體容量較小)
         reference type是 share data，所以當變數等於另一個變數時，它們將儲存同一個記憶體位址，
@@ -149,8 +152,10 @@ zoo.weeklyHot = horse
              student2.age              // output: 18
              
               // Note: struct function 要修改自己的屬性要加上 mutating 關鍵字
+ 
+ ### Teacher feedback： reference type 佔記憶體容量較小、value type 佔記憶體容量較大的說法不完全正確。這兩種的 instance 在重複 assign 給不同變數時會是這樣；但如果 "各只有一個變數" 的話是差不多的
+ 
  */
-
 
 
 /* 7. What’s the difference between instance method and type method ?
@@ -222,8 +227,10 @@ zoo.weeklyHot = horse
     self appears in an initializer or method of a class, structure or enumeration
      - instance method
      instance method 指向 instance
+ 
      - type method
-        type method 指向自己本身的 value
+   **** type method 指向自己本身的 value
+ ### Teacher feedback： "指向這個 type 本身" 的說法比較精確
 */
 
 

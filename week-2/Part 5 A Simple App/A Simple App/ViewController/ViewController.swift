@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  A Simple App
-//
-//  Created by 莫舒涵 on 2023/9/9.
-//
-
 import UIKit
 
 // 背景顏色和文字都隨機變化 7種
@@ -12,11 +5,11 @@ import UIKit
 // Random number in Swift
 class ViewController: UIViewController {
     
-    @IBOutlet var BackgroundColor: UIView!
-    @IBOutlet weak var ContentText: UILabel!
-    @IBOutlet weak var ChangeButton: UIButton!
+    @IBOutlet var backgroundColor: UIView!
+    @IBOutlet weak var contentText: UILabel!
+    @IBOutlet weak var changeButton: UIButton!
     
-    let contentText: [String] = [
+    let contentTextView: [String] = [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tempus.",
         "Contrary to popular belief, Lorem Ipsum is not simply random text.",
         "Richard McClintock, a Latin professor at Hampden-Sydney College in ",
@@ -33,13 +26,13 @@ class ViewController: UIViewController {
     }
     // 當 Button 被按下時執行
     // 確認 Main 裡的 Button 有連接上 func
-    @IBAction func ChangeTextAndColor (_ sender: UIButton){
+    @IBAction func changeTextAndColor (_ sender: UIButton){
         // value instance
-        let randomText = Int.random(in: 0..<contentText.count)
+        let randomText = Int.random(in: 0..<contentTextView.count)
         let randomColor = Int.random(in: 0..<colors.count)
         // call
-        ContentText.text = contentText[randomText]
-        BackgroundColor.backgroundColor = colors[randomColor]
+        contentText.text = contentTextView[randomText]
+        backgroundColor.backgroundColor = colors[randomColor]
     }
     
 }

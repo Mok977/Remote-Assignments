@@ -36,7 +36,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Show Another Fun Fact"/>
                                 <connections>
-                                    <action selector="ChangeTextAndColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uvv-2I-5PA"/>
+                                    <action selector="changeTextAndColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tOu-W1-qFG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,9 +53,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="BackgroundColor" destination="8bC-Xf-vdC" id="fLe-sP-gok"/>
-                        <outlet property="ChangeButton" destination="yP9-HP-dlO" id="oFK-CA-dms"/>
-                        <outlet property="ContentText" destination="cDP-4Z-hbA" id="OJ3-P0-EUj"/>
+                        <outlet property="backgroundColor" destination="8bC-Xf-vdC" id="poe-DQ-HL5"/>
+                        <outlet property="contentText" destination="cDP-4Z-hbA" id="trT-lq-f1O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

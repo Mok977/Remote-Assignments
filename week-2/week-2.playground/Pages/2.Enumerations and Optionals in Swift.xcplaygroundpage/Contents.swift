@@ -37,6 +37,47 @@ let gasolineGetPrice = gas.getprice()      // 使用 Method 取出 price
 print("92的價錢是= \(gasolinePrice)")       // output
 
 
+// ● Please explain what enum associated value is and how it works.
+/*
+     Associated Value 關聯值（相關值）
+     - 使用語法
+     enum 列舉名稱 {
+          case 成員(參數名稱: 型別)
+     }
+
+     或
+
+     enum 列舉名稱 {
+          case 成員(型別)
+     }
+     
+     - 如何運作
+         enum Barcode {
+            // 帶有 (Int、Int、Int、Int) 類型關聯值的 upc 值
+             case upc(Int, Int, Int, Int)
+            // 帶有 String 類型關聯值的 qrCode 值
+             case qrCode(String)
+         }
+         
+        //  creates a new var 分配值到 Barcode.upc 以及加入 associated tuple value (8, 85909, 51226, 3)
+         var productBarcode = Barcode.upc(8, 85909, 51226, 3)
+        // 原本 Barcode.upc 的 value 會被 new Barcode.qrCode 替換
+         productBarcode = .qrCode("ABCDEFGHIJKLMNOP")
+        // print(productBarcode) // Output: qrCode("ABCDEFGHIJKLMNOP")
+        // 只能存儲其中一個
+         
+         // 搭配 switch 語句 檢查不同的類型，將每個關聯值提取使用 let, var
+         switch productBarcode {
+         case let .upc(numberSystem, manufacturer, product, check):
+             print("UPC : \(numberSystem), \(manufacturer), \(product), \(check).")
+         case let .qrCode(productCode):
+             print("QR code: \(productCode).")
+         }
+     
+     參考: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/enumerations/
+     https://medium.com/%E5%BD%BC%E5%BE%97%E6%BD%98%E7%9A%84-swift-ios-app-%E9%96%8B%E7%99%BC%E5%95%8F%E9%A1%8C%E8%A7%A3%E7%AD%94%E9%9B%86/enum-%E5%84%B2%E5%AD%98%E7%9B%B8%E9%97%9C%E8%81%AF%E8%B3%87%E6%96%99%E7%9A%84-associated-value-26ab3e061a16
+ */
+
 
 /*
  2. Optional is a very special data type in Swift. Take var a: Int? = 10 for example, the
